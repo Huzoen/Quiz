@@ -1,0 +1,228 @@
+body {
+  font-family: sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 20px;
+  background-color: #1e1e1e; /* Fundo principal escuro */
+  color: #e0e0e0; /* Texto principal claro */
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+  background: #2c2c2c; /* Fundo do container um pouco mais claro que o body */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3); /* Sombra sutil */
+  border: 1px solid #444; /* Borda sutil para o container */
+}
+
+h1, h2 {
+  color: #f5f5f5; /* Títulos bem claros */
+  margin-bottom: 15px;
+  border-bottom: 1px solid #484848; /* Linha separadora para títulos */
+  padding-bottom: 10px;
+}
+
+h3 {
+  color: #e8e8e8; /* Subtítulos nos blocos de pergunta */
+}
+
+section {
+  margin-bottom: 25px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid #444; /* Linha separadora entre seções */
+}
+
+section:last-child {
+  border-bottom: none;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  color: #d0d0d0; /* Labels um pouco mais suaves */
+  font-weight: bold;
+}
+
+input[type="text"],
+textarea {
+  width: calc(100% - 24px); /* Ajuste para padding e borda */
+  padding: 12px;
+  margin-bottom: 12px;
+  border: 1px solid #555; /* Borda dos inputs */
+  border-radius: 4px;
+  background-color: #3a3a3a; /* Fundo dos inputs escuro */
+  color: #e0e0e0; /* Texto dentro dos inputs claro */
+  box-sizing: border-box;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+  border-color: #007bff; /* Destaque ao focar */
+  box-shadow: 0 0 5px rgba(0,123,255,0.5);
+  outline: none;
+}
+
+
+button {
+  color: white;
+  padding: 12px 18px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 8px;
+  margin-top: 10px;
+  font-weight: bold;
+  transition: background-color 0.2s ease-in-out;
+}
+
+/* Botão Principal / Salvar */
+#salvar-quiz-btn { /* No React, use className ou um seletor de atributo se precisar de ID específico */
+  background-color: #28a745; /* Verde */
+}
+#salvar-quiz-btn:hover {
+  background-color: #218838;
+}
+
+/* Botão Adicionar */
+#adicionar-pergunta-btn { /* No React, use className ou um seletor de atributo */
+  background-color: #007bff; /* Azul */
+}
+#adicionar-pergunta-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Botão Remover Pergunta */
+.remover-pergunta-btn {
+  background-color: #dc3545; /* Vermelho */
+  font-size: 0.9em;
+  padding: 8px 12px;
+}
+.remover-pergunta-btn:hover {
+  background-color: #c82333;
+}
+
+
+.pergunta-bloco {
+  background-color: #333; /* Fundo dos blocos de pergunta */
+  padding: 20px;
+  margin-bottom: 20px;
+  border: 1px solid #484848; /* Borda dos blocos de pergunta */
+  border-radius: 6px;
+}
+
+.pergunta-bloco h3 {
+  margin-top: 0;
+  border-bottom: none; 
+  padding-bottom: 0;
+}
+
+.pergunta-bloco label {
+  font-weight: normal; 
+  color: #c0c0c0;
+}
+
+.pergunta-bloco input[type="radio"] {
+  margin-right: 8px;
+  accent-color: #007bff; 
+}
+
+.opcao-item {
+  display: block;
+  margin-bottom: 10px;
+  padding: 5px;
+  border-radius: 4px;
+}
+.opcao-item:hover {
+  background-color: #3d3d3d; 
+}
+
+
+#lista-quizzes-salvos { /* No React, use className ou um seletor de atributo */
+  list-style-type: none;
+  padding: 0;
+}
+
+#lista-quizzes-salvos li { /* No React, use className ou um seletor de atributo */
+  background: #3a3a3a; 
+  color: #d0d0d0;
+  padding: 12px 15px;
+  margin-bottom: 8px;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #4f4f4f;
+}
+
+#lista-quizzes-salvos li button { 
+  background-color: #ff8c00; 
+  font-size: 0.9em;
+  padding: 8px 12px;
+}
+#lista-quizzes-salvos li button:hover {
+  background-color: #cc7000;
+}
+
+#sem-quizzes-aviso { /* No React, use className ou um seletor de atributo */
+  color: #aaa;
+  font-style: italic;
+}
+
+/* --- Estilos para QuizPlayer (tela de responder) --- */
+#opcoes-container button { /* No React, use className ou um seletor de atributo */
+  display: block;
+  width: 100%;
+  background-color: #007bff; 
+  margin-bottom: 10px;
+  text-align: left;
+  box-sizing: border-box;
+}
+
+#opcoes-container button:hover {
+  background-color: #0056b3;
+}
+
+#opcoes-container button.correta {
+  background-color: #28a745 !important; 
+  border: 2px solid #1c7430 !important;
+}
+
+#opcoes-container button.incorreta {
+  background-color: #dc3545 !important; 
+  border: 2px solid #b21f2d !important;
+}
+
+#opcoes-container button:disabled {
+  opacity: 0.8; 
+  cursor: not-allowed;
+}
+
+#proxima-pergunta-btn { /* No React, use className ou um seletor de atributo */
+  background-color: #17a2b8; /* Ciano */
+}
+#proxima-pergunta-btn:hover {
+  background-color: #117a8b;
+}
+
+#resultado-final-container a { 
+  color: #00aeff;
+  text-decoration: none;
+}
+#resultado-final-container a:hover {
+  text-decoration: underline;
+}
+
+#quiz-player-titulo { /* No React, use className ou um seletor de atributo */
+  border-bottom: 1px solid #484848;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+#pergunta-atual-container h2 { /* No React, use className ou um seletor de atributo */
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  font-size: 1.5em;
+}
